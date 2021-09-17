@@ -21,13 +21,13 @@ steps:
     npm run build
   displayName: 'npm install and build'
   
-
-- task: CopyFiles@2
-  displayName: 'Copy Files to: src'
+- task: Npm@1
   inputs:
-    Contents: '**/*js'
-    TargetFolder: 'build'
-
+    command: 'install'
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'run build'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
