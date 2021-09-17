@@ -26,7 +26,7 @@ steps:
   displayName: 'Copy Files to: src'
   inputs:
     Contents: '**/*js'
-    TargetFolder: build
+    TargetFolder: 'build'
 
 
 - task: PublishBuildArtifacts@1
